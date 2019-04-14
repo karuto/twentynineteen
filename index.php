@@ -21,22 +21,26 @@ get_template_part( 'template-parts/header' );
 		<main id="main" class="site-main">
 
 		<?php
-		if ( have_posts() ) {
-
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/content' );
-			}
-
-			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
-
+		if ( is_home() ) {
+			// only for "recent posts", not for static page as home page
+			get_template_part( 'template-parts/home' );
+		} else if ( is_single() ) {
+			// any posts; excludes pages and attachments
+			get_template_part( 'template-parts/single' );
+		} else if ( is_page() ) {
+			// any pages; excludes posts
+			get_template_part( 'template-parts/page' );
+		} else if ( is_attachment() ) {
+			// any pages; excludes posts
+			get_template_part( 'template-parts/image' );
+		} else if ( is_post_type_archive() ) {
+			get_template_part( 'template-parts/archive' );
+		} else if ( is_search() ) {
+			get_template_part( 'template-parts/search' );
+		} else if ( is_404() ) {
+			get_template_part( 'template-parts/404' );
 		} else {
-
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
-
+			get_template_part( 'template-parts/home' );
 		}
 		?>
 
