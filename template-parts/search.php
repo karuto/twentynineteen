@@ -11,15 +11,9 @@
 ?>
 
 <?php if ( have_posts() ) : ?>
-
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php _e( 'Search results for:', 'twentynineteen' ); ?>
-		</h1>
-		<div class="page-description"><?php echo get_search_query(); ?></div>
-	</header><!-- .page-header -->
-
 	<?php
+	get_template_part( 'template-parts/page-header' );
+
 	// Start the Loop.
 	while ( have_posts() ) :
 		the_post();
