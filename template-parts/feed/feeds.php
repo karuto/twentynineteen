@@ -17,17 +17,28 @@ if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
 
-		/*
-			* Include the Post-Format-specific template for the content.
-			* If you want to override this in a child theme, then include a file
-			* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			*/
-		get_template_part( 'template-parts/content/content-excerpt' );
+    if ( is_single() ) {
+      $post_type = 'post';
+    } else if ( is_page() ) {
+      $post_type = 'page';
+    } else {
+      $post_type = 'excerpt';
+    }
+		get_template_part( 'template-parts/content/content', $post_type );
 
     // End the loop.
   }
 
-	// Previous/next page navigation.
+  // If comments are open or we have at least one comment, load up the comment template.
+  // This only applies for single post and page pages.
+  // This won't apply for numbered pages, such as home or archive pages.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template( '/template-parts/comments.php' );
+  }
+
+  // Previous/next page navigation.
+  // This won't apply for single post and page pages.
+  // This only applies for numbered pages, such as home or archive pages.
 	twentynineteen_the_posts_navigation();
 
 	// If no content, include the "No posts found" template.
