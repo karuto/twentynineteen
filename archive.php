@@ -9,7 +9,7 @@
  * @since 1.0.0
  */
 
-get_header();
+get_template_part( 'template-parts/header' );
 ?>
 
 	<section id="primary" class="content-area">
@@ -51,4 +51,5 @@ get_header();
 	</section><!-- #primary -->
 
 <?php
-get_footer();
+get_template_part( 'template-parts/footer' );
+?>
