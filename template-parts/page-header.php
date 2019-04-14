@@ -11,9 +11,11 @@
  */
 ?>
 
-<header class="page-header">
-  <?php
+<?php
+if ( is_archive() || is_search() || is_404() ) {
+  echo '<header class="page-header">';
   echo '<h1 class="page-title">';
+
   if ( is_archive() ) {
     echo get_the_archive_title();
   } else if ( is_search() ) {
@@ -22,10 +24,14 @@
     _e( 'Oops! That page can&rsquo;t be found.', 'twentynineteen' );
   }
   echo '</h1>';
+
+  // Extra div just for search result pages.
   if( is_search() ) {
     echo '<div class="page-description">';
     echo get_search_query();
     echo '</div>';
   }
-  ?>
-</header><!-- .page-header -->
+  echo '</header>';
+}
+
+?>
