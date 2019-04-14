@@ -33,7 +33,7 @@ get_template_part( 'template-parts/header' );
 		} else if ( is_attachment() ) {
 			// any pages; excludes posts
 			get_template_part( 'template-parts/image' );
-		} else if ( is_post_type_archive() ) {
+		} else if ( is_archive() ) {
 			get_template_part( 'template-parts/archive' );
 		} else if ( is_search() ) {
 			get_template_part( 'template-parts/search' );
