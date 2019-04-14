@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
+ * The template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -58,7 +56,7 @@ $discussion = twentynineteen_get_discussion_data();
 		<?php
 			// Only show discussion meta information when comments are open and available.
 		if ( have_comments() && comments_open() ) {
-			get_template_part( 'template-parts/post/discussion', 'meta' );
+			get_template_part( 'template-parts/post/comments-discussion-meta' );
 		}
 		?>
 	</div><!-- .comments-title-flex -->

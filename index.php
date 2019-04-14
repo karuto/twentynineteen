@@ -14,39 +14,45 @@
  * @since 1.0.0
  */
 
-get_template_part( 'template-parts/header' );
-?>
+?><!doctype html>
+<html <?php language_attributes(); ?>>
+	<?php get_template_part( 'template-parts/head' ); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<body <?php body_class(); ?>>
+		<div id="page" class="site">
+			<?php get_template_part( 'template-parts/header' ); ?>
+			<div id="content" class="site-content">
+				<section id="primary" class="content-area">
+					<main id="main" class="site-main">
 
-		<?php
-		if ( is_home() ) {
-			// only for "recent posts", not for static page as home page
-			get_template_part( 'template-parts/home' );
-		} else if ( is_single() ) {
-			// any posts; excludes pages and attachments
-			get_template_part( 'template-parts/single' );
-		} else if ( is_page() ) {
-			// any pages; excludes posts
-			get_template_part( 'template-parts/page' );
-		} else if ( is_attachment() ) {
-			// any pages; excludes posts
-			get_template_part( 'template-parts/image' );
-		} else if ( is_archive() ) {
-			get_template_part( 'template-parts/archive' );
-		} else if ( is_search() ) {
-			get_template_part( 'template-parts/search' );
-		} else if ( is_404() ) {
-			get_template_part( 'template-parts/404' );
-		} else {
-			get_template_part( 'template-parts/home' );
-		}
-		?>
+					<?php
+					if ( is_home() ) {
+						// only for "recent posts", not for static page as home page
+						get_template_part( 'template-parts/home' );
+					} else if ( is_single() ) {
+						// any posts; excludes pages and attachments
+						get_template_part( 'template-parts/post' );
+					} else if ( is_page() ) {
+						// any pages; excludes posts
+						get_template_part( 'template-parts/page' );
+					} else if ( is_attachment() ) {
+						get_template_part( 'template-parts/image' );
+					} else if ( is_archive() ) {
+						get_template_part( 'template-parts/archive' );
+					} else if ( is_search() ) {
+						get_template_part( 'template-parts/search' );
+					} else if ( is_404() ) {
+						get_template_part( 'template-parts/404' );
+					} else {
+						get_template_part( 'template-parts/home' );
+					}
+					?>
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+					</main><!-- .site-main -->
+				</section><!-- .content-area -->
 
-<?php
-	get_template_part( 'template-parts/footer' );
-?>
+			</div><!-- #content -->
+			<?php get_template_part( 'template-parts/footer' ); ?>
+		</div><!-- #page -->
+	</body>
+</html>

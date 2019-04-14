@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archive pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#category
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
