@@ -22,7 +22,7 @@
 		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
 		"format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
 	},
-	"support"    : {
+	"support": {
 		"issues": "https://github.com/WordPress/twentynineteen/issues",
 		"source": "https://github.com/WordPress/twentynineteen"
 	}
