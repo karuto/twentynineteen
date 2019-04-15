@@ -10,4 +10,4 @@
  */
 ?>
 
-<?php get_template_part( 'template-parts/feed/feeds' ); ?>
+<?php get_template_part( 'template-parts/partials/feeds' ); ?>

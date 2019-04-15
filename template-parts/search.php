@@ -12,7 +12,7 @@
 
 <?php if ( have_posts() ) : ?>
 	<?php
-	get_template_part( 'template-parts/page-header' );
+	get_template_part( 'template-parts/partials/page-header' );
 
 	// Start the Loop.
 	while ( have_posts() ) :

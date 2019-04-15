@@ -14,7 +14,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
 	<header class="entry-header">
-		<?php get_template_part( 'template-parts/entry-header' ); ?>
+		<?php get_template_part( 'template-parts/partials/entry-header' ); ?>
 	</header>
 	<?php endif; ?>
 
@@ -49,7 +49,7 @@
 	</footer><!-- .entry-footer -->
 
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>
-	<?php get_template_part( 'template-parts/content/content-post-author-bio' ); ?>
+	<?php get_template_part( 'template-parts/partials/content-post-author-bio' ); ?>
 	<?php endif; ?>
 
 </article><!-- #post-${ID} -->

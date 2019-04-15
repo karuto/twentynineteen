@@ -13,7 +13,7 @@
 <div class="error-404 not-found">
 
 	<?php
-	get_template_part( 'template-parts/page-header' );
+	get_template_part( 'template-parts/partials/page-header' );
 	?>
 
 	<div class="page-content">
